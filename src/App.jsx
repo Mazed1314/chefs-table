@@ -1,51 +1,38 @@
 import "./App.css";
+import NavBar from "./component/navBar/NavBar";
+import Hero from "./component/hero/Hero";
+import Card from "./component/card/Card";
 
 function App() {
   return (
     <>
-      {/* navbar  */}
-      <div className="navbar bg-base-100">
-        <div className="flex-1">
-          <a className="btn btn-ghost text-xl">daisyUI</a>
-        </div>
-        <div className="flex-none gap-2">
-          <div className="form-control">
-            <input
-              type="text"
-              placeholder="Search"
-              className="input input-bordered w-24 md:w-auto"
-            />
+      <div className="m-4 md:mx-20 my-4">
+        <NavBar></NavBar>
+        <Hero></Hero>
+        {/* Our Recipes */}
+        <div className="">
+          <div className="text-center p-4 md:px-40">
+            <h1 className="text-3xl md:text-4xl py-2 font-semibold">
+              Our Recipes
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Proin et feugiat senectus
+              vulputate netus pharetra rhoncus. Eget urna volutpat curabitur
+              elementum mauris aenean neque.
+            </p>
           </div>
-          <div className="dropdown dropdown-end">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost btn-circle avatar"
-            >
-              <div className="w-10 rounded-full">
-                <img
-                  alt="Tailwind CSS Navbar component"
-                  src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                />
-              </div>
+          <div className="md:p-2 ">
+            <div className="grid grids-col-1 md:grid-cols-2 gap-5 md:w-7/12">
+              <Card></Card>
+              <Card></Card>
+              <Card></Card>
+              <Card></Card>
+              <Card></Card>
+              <Card></Card>
             </div>
-            <ul
-              tabIndex={0}
-              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </a>
-              </li>
-              <li>
-                <a>Settings</a>
-              </li>
-              <li>
-                <a>Logout</a>
-              </li>
-            </ul>
+            <div className="want-to-cook-container w-5/12">
+              <div className="border rounded-lg"></div>
+            </div>
           </div>
         </div>
       </div>
