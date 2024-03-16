@@ -3,13 +3,13 @@ const Hero = () => {
     <div
       className="hero h-10/12 md:h-[500px] rounded-3xl"
       style={{
-        backgroundImage: "url(../public/cooking.jpg)",
+        backgroundImage: "url(../../.././public/cooking.jpg)",
       }}
     >
       <div className="hero-overlay bg-opacity-60 rounded-3xl"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-4xl">
-          <h1 className="mb-5 text-5xl font-bold">
+          <h1 className="mb-5 text-3xl md:text-5xl font-bold">
             Discover an exceptional cooking class tailored for you!
           </h1>
           <p className="mb-5">

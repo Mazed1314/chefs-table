@@ -9,6 +9,7 @@ import Card from "./component/card/Card";
 function App() {
   const [cards, setCards] = useState([]);
   const [cook, setCook] = useState([]);
+  const [currentCook, setCurrentCook] = useState([]);
 
   useEffect(() => {
     fetch("myData.json")
@@ -28,7 +29,17 @@ function App() {
       alert("already exist");
     }
   };
-  console.log(cook);
+  // console.log(cook);
+
+  const handlePreparing = (id) => {
+    // console.log(id);
+    const newCook = cook.filter((item) => item.recipe_id != id);
+    setCook(newCook);
+
+    setCurrentCook([...currentCook, id]);
+  };
+  console.log(currentCook);
+
   return (
     <>
       <div className="m-4 md:mx-20 my-4">
@@ -75,17 +86,17 @@ function App() {
                     </tr>
                   </thead>
                   <tbody>
-                    {cook.map((item) => (
+                    {cook.map((item, index) => (
                       <>
                         <tr>
-                          <td className="px-2">01</td>
+                          <td className="px-4">{index + 1}</td>
                           <td>{item.recipe_name}</td>
                           <td>{item.preparing_time} min</td>
                           <td>{item.calories} Calories</td>
                           <td>
                             <a
-                              href=""
-                              className="bg-green-400 rounded-full py-2 px-4 text-white font-semibold"
+                              onClick={() => handlePreparing(item.recipe_id)}
+                              className="btn bg-green-400 rounded-full py-2 px-4 text-white font-semibold"
                             >
                               <i className="fa-solid fa-utensils"></i>
                             </a>
@@ -107,12 +118,16 @@ function App() {
                     <th>Time</th>
                     <th>Calories</th>
                   </tr>
-                  <tr>
-                    <td>01</td>
-                    <td>Banana Smoothie</td>
-                    <td>15 min</td>
-                    <td>200 Calories</td>
-                  </tr>
+                  {currentCook.map((item, index) => (
+                    <>
+                      <tr>
+                        <td>{index + 1}</td>
+                        <td>{item.recipe_name}</td>
+                        <td>{item.preparing_time} min</td>
+                        <td>{item.calories} Calories</td>
+                      </tr>
+                    </>
+                  ))}
                 </table>
               </div>
             </div>
