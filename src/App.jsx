@@ -5,11 +5,24 @@ import NavBar from "./component/navBar/NavBar";
 import Hero from "./component/hero/Hero";
 import Card from "./component/card/Card";
 // import CookingCard from "./component/cooking-card/CookingCard";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+  const notify = () =>
+    toast.warn("You already add this item !", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
   const [cards, setCards] = useState([]);
   const [cook, setCook] = useState([]);
-  const [cookCount, setCookCount] = useState(0);
   const [currentCook, setCurrentCook] = useState([]);
 
   useEffect(() => {
@@ -26,12 +39,11 @@ function App() {
     const isExist = cook.find((item) => item.recipe_id == e.recipe_id);
     if (!isExist) {
       setCook([...cook, e]);
-      setCookCount(cookCount + 1);
     } else {
-      alert("already exist");
+      // alert("already exist");
+      notify();
     }
   };
-  // console.log(cookCount);
 
   const handlePreparing = (i, id) => {
     // console.log(id);
@@ -53,10 +65,13 @@ function App() {
             <h1 className="text-3xl md:text-4xl py-2 font-semibold">
               Our Recipes
             </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur. Proin et feugiat senectus
-              vulputate netus pharetra rhoncus. Eget urna volutpat curabitur
-              elementum mauris aenean neque.
+            <p className="text-gray-500">
+              "Our Recipes" is more than just a collection of instructions; it's
+              a testament to our culinary journey, a canvas where flavors,
+              traditions, and creativity converge to create memorable
+              experiences. Each recipe encapsulates not just ingredients and
+              methods, but stories of heritage, innovation, and shared moments
+              around the table.
             </p>
           </div>
           <div className="md:p-2 md:flex">
@@ -74,7 +89,7 @@ function App() {
             <div className="want-to-cook-container md:w-5/12">
               <div className="border rounded-2xl md:mx-4 p-4 my-2">
                 <h1 className="text-2xl font-bold text-center my-3">
-                  Want to cook:{cook.length}
+                  Want to cook: {cook.length}
                   <div className="text-center w-full flex justify-center py-4">
                     <hr className="h-1 w-2/3" />
                   </div>
@@ -90,7 +105,7 @@ function App() {
                   <tbody>
                     {cook.map((item, index) => (
                       <>
-                        <tr>
+                        <tr className="text-gray-500">
                           <td className="px-4">{index + 1}</td>
                           <td>{item.recipe_name}</td>
                           <td>{item.preparing_time} min</td>
@@ -100,9 +115,9 @@ function App() {
                               onClick={() =>
                                 handlePreparing(item, item.recipe_id)
                               }
-                              className="btn bg-green-400 rounded-full py-2 px-4 text-white font-semibold"
+                              className="btn btn-sm bg-green-400 rounded-2xl py-2 px-4 text-white font-semibold"
                             >
-                              <i className="fa-solid fa-utensils"></i>
+                              Preparing
                             </a>
                           </td>
                         </tr>
@@ -111,7 +126,7 @@ function App() {
                   </tbody>
                 </table>
                 <h1 className="text-2xl font-bold text-center my-3">
-                  Currently cooking:{currentCook.length}
+                  Currently cooking: {currentCook.length}
                   <div className="text-center w-full flex justify-center py-4">
                     <hr className="h-1 w-2/3" />
                   </div>
@@ -124,7 +139,7 @@ function App() {
                   </tr>
                   {currentCook.map((item, index) => (
                     <>
-                      <tr>
+                      <tr className="text-gray-500">
                         <td className="p-4">{index + 1}</td>
                         <td>{item.recipe_name}</td>
                         <td>{item.preparing_time} min</td>
@@ -132,7 +147,7 @@ function App() {
                       </tr>
                     </>
                   ))}
-                  <tr>
+                  <tr className="text-gray-600 font-semibold">
                     <td></td>
                     <td></td>
                     <td>Total Time : min</td>
