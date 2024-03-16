@@ -16,8 +16,8 @@
       "Salt and pepper to taste",
       "Grated Parmesan cheese for garnish"
     ],
-    "preparing_time": "40 min",
-    "calories": "450 calories"
+    "preparing_time": "40",
+    "calories": "450"
   },
   {
     "recipe_image": "./json-img/02Chicken Curry.jpg",
@@ -37,8 +37,8 @@
       "2 tbsp vegetable oil",
       "Fresh coriander leaves for garnish"
     ],
-    "preparing_time": "45 min",
-    "calories": "380 calories"
+    "preparing_time": "45",
+    "calories": "380"
   },
   {
     "recipe_image": "./json-img/03Caesar Salad.jpeg",
@@ -54,8 +54,8 @@
       "2 anchovy fillets (optional)",
       "Salt and pepper to taste"
     ],
-    "preparing_time": "15 min",
-    "calories": "250 calories"
+    "preparing_time": "15",
+    "calories": "250"
   },
   {
     "recipe_image": "./json-img/04Vegetable Stir-Fry.jpg",
@@ -74,8 +74,8 @@
       "1 tsp cornstarch",
       "2 tbsp vegetable oil"
     ],
-    "preparing_time": "20 min",
-    "calories": "200 calories"
+    "preparing_time": "20",
+    "calories": "200"
   },
   {
     "recipe_image": "./json-img/05Banana Smoothie.jpg",
@@ -90,8 +90,8 @@
       "1/2 tsp vanilla extract",
       "Ice cubes (optional)"
     ],
-    "preparing_time": "10 min",
-    "calories": "150 calories"
+    "preparing_time": "10",
+    "calories": "150"
   },
   {
     "recipe_image": "./json-img/06Vegetable Soup.jpg",
@@ -110,7 +110,7 @@
       "1 tsp dried thyme",
       "Salt and pepper to taste"
     ],
-    "preparing_time": "30 min",
-    "calories": "120 calories"
+    "preparing_time": "30",
+    "calories": "120"
   }
 ]

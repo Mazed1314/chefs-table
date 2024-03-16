@@ -9,6 +9,7 @@ import Card from "./component/card/Card";
 function App() {
   const [cards, setCards] = useState([]);
   const [cook, setCook] = useState([]);
+  const [cookCount, setCookCount] = useState(0);
   const [currentCook, setCurrentCook] = useState([]);
 
   useEffect(() => {
@@ -25,18 +26,19 @@ function App() {
     const isExist = cook.find((item) => item.recipe_id == e.recipe_id);
     if (!isExist) {
       setCook([...cook, e]);
+      setCookCount(cookCount + 1);
     } else {
       alert("already exist");
     }
   };
-  // console.log(cook);
+  // console.log(cookCount);
 
-  const handlePreparing = (id) => {
+  const handlePreparing = (i, id) => {
     // console.log(id);
     const newCook = cook.filter((item) => item.recipe_id != id);
     setCook(newCook);
 
-    setCurrentCook([...currentCook, id]);
+    setCurrentCook([...currentCook, i]);
   };
   console.log(currentCook);
 
@@ -72,7 +74,7 @@ function App() {
             <div className="want-to-cook-container md:w-5/12">
               <div className="border rounded-2xl md:mx-4 p-4 my-2">
                 <h1 className="text-2xl font-bold text-center my-3">
-                  Want to cook: 01
+                  Want to cook:{cook.length}
                   <div className="text-center w-full flex justify-center py-4">
                     <hr className="h-1 w-2/3" />
                   </div>
@@ -92,10 +94,12 @@ function App() {
                           <td className="px-4">{index + 1}</td>
                           <td>{item.recipe_name}</td>
                           <td>{item.preparing_time} min</td>
-                          <td>{item.calories} Calories</td>
+                          <td>{item.calories} calories</td>
                           <td>
                             <a
-                              onClick={() => handlePreparing(item.recipe_id)}
+                              onClick={() =>
+                                handlePreparing(item, item.recipe_id)
+                              }
                               className="btn bg-green-400 rounded-full py-2 px-4 text-white font-semibold"
                             >
                               <i className="fa-solid fa-utensils"></i>
@@ -107,7 +111,7 @@ function App() {
                   </tbody>
                 </table>
                 <h1 className="text-2xl font-bold text-center my-3">
-                  Currently cooking: 02
+                  Currently cooking:{currentCook.length}
                   <div className="text-center w-full flex justify-center py-4">
                     <hr className="h-1 w-2/3" />
                   </div>
@@ -121,13 +125,19 @@ function App() {
                   {currentCook.map((item, index) => (
                     <>
                       <tr>
-                        <td>{index + 1}</td>
+                        <td className="p-4">{index + 1}</td>
                         <td>{item.recipe_name}</td>
                         <td>{item.preparing_time} min</td>
-                        <td>{item.calories} Calories</td>
+                        <td>{item.calories} calories</td>
                       </tr>
                     </>
                   ))}
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Total Time : min</td>
+                    <td>Total Calories : calories</td>
+                  </tr>
                 </table>
               </div>
             </div>

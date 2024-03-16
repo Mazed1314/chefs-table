@@ -3,7 +3,8 @@ const Hero = () => {
     <div
       className="hero h-10/12 md:h-[500px] rounded-3xl"
       style={{
-        backgroundImage: "url(../../.././public/cooking.jpg)",
+        backgroundImage:
+          "url(https://assets.mobilebaymag.com/uploads/2020/11/cooking.jpg)",
       }}
     >
       <div className="hero-overlay bg-opacity-60 rounded-3xl"></div>
