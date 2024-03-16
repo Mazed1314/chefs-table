@@ -1,0 +1,116 @@
+[
+  {
+    "recipe_image": "./json-img/01Spaghetti Bolognese.png",
+    "recipe_id": "R001",
+    "recipe_name": "Spaghetti Bolognese",
+    "short_description": "Classic Italian pasta dish with rich tomato-based meat sauce.",
+    "ingredients": [
+      "400 g spaghetti",
+      "300 g ground beef",
+      "1 onion",
+      "2 cloves garlic",
+      "400 g canned tomatoes",
+      "2 tbsp tomato paste",
+      "1 tsp dried oregano",
+      "1 tsp dried basil",
+      "Salt and pepper to taste",
+      "Grated Parmesan cheese for garnish"
+    ],
+    "preparing_time": "40 min",
+    "calories": "450 calories"
+  },
+  {
+    "recipe_image": "./json-img/02Chicken Curry.jpg",
+    "recipe_id": "R002",
+    "recipe_name": "Chicken Curry",
+    "short_description": "Spicy and aromatic chicken curry cooked with a blend of Indian spices.",
+    "ingredients": [
+      "500 g chicken thighs",
+      "2 onions",
+      "3 cloves garlic",
+      "1 inch ginger",
+      "2 tomatoes",
+      "200 ml coconut milk",
+      "2 tbsp curry powder",
+      "1 tsp turmeric powder",
+      "1 tsp cumin seeds",
+      "2 tbsp vegetable oil",
+      "Fresh coriander leaves for garnish"
+    ],
+    "preparing_time": "45 min",
+    "calories": "380 calories"
+  },
+  {
+    "recipe_image": "./json-img/03Caesar Salad.jpg",
+    "recipe_id": "R003",
+    "recipe_name": "Caesar Salad",
+    "short_description": "Classic salad made with crisp romaine lettuce, crunchy croutons, and creamy Caesar dressing.",
+    "ingredients": [
+      "1 head romaine lettuce",
+      "100 g croutons",
+      "50 g grated Parmesan cheese",
+      "2 tbsp Caesar dressing",
+      "1 lemon",
+      "2 anchovy fillets (optional)",
+      "Salt and pepper to taste"
+    ],
+    "preparing_time": "15 min",
+    "calories": "250 calories"
+  },
+  {
+    "recipe_image": "./json-img/04Vegetable Stir-Fry.jpg",
+    "recipe_id": "R004",
+    "recipe_name": "Vegetable Stir-Fry",
+    "short_description": "Quick and easy stir-fry loaded with colorful vegetables in a savory sauce.",
+    "ingredients": [
+      "1 bell pepper",
+      "1 carrot",
+      "100 g broccoli florets",
+      "100 g snow peas",
+      "1 onion",
+      "2 cloves garlic",
+      "2 tbsp soy sauce",
+      "1 tbsp sesame oil",
+      "1 tsp cornstarch",
+      "2 tbsp vegetable oil"
+    ],
+    "preparing_time": "20 min",
+    "calories": "200 calories"
+  },
+  {
+    "recipe_image": "./json-img/05Banana Smoothie.jpg",
+    "recipe_id": "R005",
+    "recipe_name": "Banana Smoothie",
+    "short_description": "Creamy and refreshing smoothie made with ripe bananas and yogurt.",
+    "ingredients": [
+      "2 ripe bananas",
+      "200 ml plain yogurt",
+      "100 ml milk",
+      "1 tbsp honey",
+      "1/2 tsp vanilla extract",
+      "Ice cubes (optional)"
+    ],
+    "preparing_time": "10 min",
+    "calories": "150 calories"
+  },
+  {
+    "recipe_image": "./json-img/06Vegetable Soup.jpg",
+    "recipe_id": "R006",
+    "recipe_name": "Vegetable Soup",
+    "short_description": "Hearty and nutritious soup packed with assorted vegetables in a flavorful broth.",
+    "ingredients": [
+      "2 carrots",
+      "2 celery stalks",
+      "1 onion",
+      "2 cloves garlic",
+      "1 potato",
+      "100 g green beans",
+      "1 can diced tomatoes",
+      "1 liter vegetable broth",
+      "1 tsp dried thyme",
+      "Salt and pepper to taste"
+    ],
+    "preparing_time": "30 min",
+    "calories": "120 calories"
+  }
+]

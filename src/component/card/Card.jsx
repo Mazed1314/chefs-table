@@ -1,22 +1,27 @@
-const Card = () => {
+const Card = ({ card }) => {
   return (
-    <div className="card md:w-full bg-base-100 shadow-xl border rounded-lg">
+    <div className="card md:w-full bg-base-100 shadow-xl border rounded-2xl">
       <figure className="p-4 pb-0">
         <img
-          src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+          className="w-[400px] h-[200px] rounded-2xl"
+          src={card.recipe_image}
           alt="Shoes"
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <h2 className="card-title">{card.recipe_name}</h2>
+        <p>{card.short_description}</p>
         <div className="">
-          <h2 className="text-lg font-semibold">Shoes!</h2>
-          <ul>
-            <li>500g ground beef </li>
-            <li>1 onion chopped</li>
-            <li>2 cloves garlic minced</li>
-          </ul>
+          <h2 className="text-lg font-semibold">
+            Ingredients : {card.ingredients.length}
+          </h2>
+          {card.ingredients.map((ingredient) => {
+            return (
+              <ul>
+                <li key={ingredient[0]}>{ingredient}</li>
+              </ul>
+            );
+          })}
         </div>
         <div className="flex justify-between">
           <div className="">

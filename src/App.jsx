@@ -1,9 +1,22 @@
 import "./App.css";
+import { useEffect } from "react";
+import { useState } from "react";
 import NavBar from "./component/navBar/NavBar";
 import Hero from "./component/hero/Hero";
 import Card from "./component/card/Card";
 
 function App() {
+  const [cards, setCards] = useState([]);
+  useEffect(() => {
+    fetch("mydata.json")
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        setCards(data);
+      });
+  }, []);
+  console.log(cards);
+
   return (
     <>
       <div className="m-4 md:mx-20 my-4">
@@ -23,12 +36,9 @@ function App() {
           </div>
           <div className="md:p-2 ">
             <div className="grid grids-col-1 md:grid-cols-2 gap-5 md:w-7/12">
-              <Card></Card>
-              <Card></Card>
-              <Card></Card>
-              <Card></Card>
-              <Card></Card>
-              <Card></Card>
+              {cards.map((card) => {
+                return <Card key={card.recipe_id} card={card}></Card>;
+              })}
             </div>
             <div className="want-to-cook-container w-5/12">
               <div className="border rounded-lg"></div>
