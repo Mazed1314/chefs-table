@@ -41,7 +41,7 @@
     "calories": "380"
   },
   {
-    "recipe_image": "./json-img/03Caesar Salad.jpeg",
+    "recipe_image": "./json-img/03Caesar Salad.jpg",
     "recipe_id": "R003",
     "recipe_name": "Caesar Salad",
     "short_description": "Classic salad made with crisp romaine lettuce, crunchy croutons, and creamy Caesar dressing.",

@@ -25,9 +25,9 @@ const Card = ({ card, handleCook }) => {
           <h2 className="text-lg font-semibold">
             Ingredients : {ingredients.length}
           </h2>
-          {ingredients.map((ingredient) => {
+          {ingredients.map((ingredient, index) => {
             return (
-              <ul className="text-gray-500">
+              <ul key={index} className="text-gray-500">
                 <li>{ingredient}</li>
               </ul>
             );

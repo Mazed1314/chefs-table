@@ -5,7 +5,7 @@ import NavBar from "./component/navBar/NavBar";
 import Hero from "./component/hero/Hero";
 import Card from "./component/card/Card";
 // import CookingCard from "./component/cooking-card/CookingCard";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -24,6 +24,8 @@ function App() {
   const [cards, setCards] = useState([]);
   const [cook, setCook] = useState([]);
   const [currentCook, setCurrentCook] = useState([]);
+  const [timeCount, setTimeCount] = useState(0);
+  const [caloriesCount, setCaloriesCount] = useState(0);
 
   useEffect(() => {
     fetch("myData.json")
@@ -49,25 +51,27 @@ function App() {
     // console.log(id);
     const newCook = cook.filter((item) => item.recipe_id != id);
     setCook(newCook);
-
     setCurrentCook([...currentCook, i]);
-  };
-  console.log(currentCook);
+    const initialValueOfTime = parseInt(i.preparing_time);
+    const initialValueOfCalories = parseInt(i.calories);
 
+    setTimeCount(parseInt(timeCount) + initialValueOfTime);
+    setCaloriesCount(parseInt(caloriesCount) + initialValueOfCalories);
+  };
   return (
     <>
       <div className="m-4 md:mx-20 my-4">
         <NavBar></NavBar>
         <Hero></Hero>
-        {/* Our Recipes */}
+        {/* --------------------------Our Recipes--------------------- */}
         <div className="">
           <div className="text-center p-4 md:px-40">
             <h1 className="text-3xl md:text-4xl py-2 font-semibold">
               Our Recipes
             </h1>
             <p className="text-gray-500">
-              "Our Recipes" is more than just a collection of instructions; it's
-              a testament to our culinary journey, a canvas where flavors,
+              Our Recipes is more than just a collection of instructions; it's a
+              testament to our culinary journey, a canvas where flavors,
               traditions, and creativity converge to create memorable
               experiences. Each recipe encapsulates not just ingredients and
               methods, but stories of heritage, innovation, and shared moments
@@ -150,8 +154,8 @@ function App() {
                   <tr className="text-gray-600 font-semibold">
                     <td></td>
                     <td></td>
-                    <td>Total Time : min</td>
-                    <td>Total Calories : calories</td>
+                    <td>Total Time : {timeCount} min</td>
+                    <td>Total Calories : {caloriesCount} calories</td>
                   </tr>
                 </table>
               </div>
