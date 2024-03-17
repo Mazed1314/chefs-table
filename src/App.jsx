@@ -64,7 +64,7 @@ function App() {
         <NavBar></NavBar>
         <Hero></Hero>
         {/* --------------------------Our Recipes--------------------- */}
-        <div className="">
+        <div>
           <div className="text-center p-4 md:px-40">
             <h1 className="text-3xl md:text-4xl py-2 font-semibold">
               Our Recipes
@@ -98,12 +98,14 @@ function App() {
                     <hr className="h-1 w-2/3" />
                   </div>
                 </h1>
-                <table className="w-full">
-                  <thead className="py-2">
+                <table className="bg-gray-100 w-full">
+                  <thead className="py-2 bg-stone-300">
                     <tr>
-                      <th colSpan={2}>Name</th>
+                      <th>Sl</th>
+                      <th>Name</th>
                       <th>Time</th>
                       <th>Calories</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -136,27 +138,34 @@ function App() {
                   </div>
                 </h1>
                 <table className="w-full">
-                  <tr>
-                    <th colSpan={2}>Name</th>
-                    <th>Time</th>
-                    <th>Calories</th>
-                  </tr>
-                  {currentCook.map((item, index) => (
-                    <>
-                      <tr className="text-gray-500">
-                        <td className="p-4">{index + 1}</td>
-                        <td>{item.recipe_name}</td>
-                        <td>{item.preparing_time} min</td>
-                        <td>{item.calories} calories</td>
-                      </tr>
-                    </>
-                  ))}
-                  <tr className="text-gray-600 font-semibold">
-                    <td></td>
-                    <td></td>
-                    <td>Total Time : {timeCount} min</td>
-                    <td>Total Calories : {caloriesCount} calories</td>
-                  </tr>
+                  <thead className="py-2 bg-stone-300">
+                    <tr>
+                      <th>Sl </th>
+                      <th>Name</th>
+                      <th>Time</th>
+                      <th>Calories</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-gray-100 ">
+                    {currentCook.map((item, index) => (
+                      <>
+                        <tr className="text-gray-500">
+                          <td className="p-4">{index + 1}</td>
+                          <td>{item.recipe_name}</td>
+                          <td>{item.preparing_time}min</td>
+                          <td>{item.calories}calories</td>
+                        </tr>
+                      </>
+                    ))}
+                  </tbody>
+                  <tfoot>
+                    <tr className="text-gray-600 font-semibold">
+                      <td></td>
+                      <td></td>
+                      <td>Total Time : {timeCount}min</td>
+                      <td>Total Calories : {caloriesCount}calories</td>
+                    </tr>
+                  </tfoot>
                 </table>
               </div>
             </div>
